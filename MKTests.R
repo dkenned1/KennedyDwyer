@@ -55,7 +55,7 @@ for (j in 1:length(Samples))
 
 }
 
-
+colnames(Stor_Output)=c("SampleName", "p-value", "FixedS", "SegS", "FixedNS", "SegNS")
 # Define the function
 ggd.qqplot = function(pvector, main=NULL, ...) {
     o = -log10(sort(pvector,decreasing=F))
@@ -69,6 +69,6 @@ ggd.qqplot = function(pvector, main=NULL, ...) {
 
 
 
-ggd.qqplot(Stor_Output[,2], "QQ-plot, regression")
+ggd.qqplot(as.numeric(Stor_Output[,2]), "QQ-plot, regression")
 
 
